@@ -238,3 +238,8 @@ form {
   margin-top: 1rem;
   font-size: 2rem;
 }
+@media (max-width: 780px) {
+  html {
+    font-size: 45%;
+  }
+}
