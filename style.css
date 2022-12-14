@@ -240,6 +240,10 @@ form {
 }
 @media (max-width: 780px) {
   html {
-    font-size: 45%;
+    font-size: 50%;
+  }
+  .countries {
+    display: flex;
+    flex-direction: column;
   }
 }
