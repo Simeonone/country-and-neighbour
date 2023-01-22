@@ -11,7 +11,6 @@ function getJSON(url, errorMsg = `Something went wrong`) {
   return fetch(url).then(function (response) {
     document.querySelector('.lds-ellipsis').style.display = 'none';
     document.querySelector('.resetBtn').style.display = 'inline';
-    // console.log(response);
     if (!response.ok) {
       throw new Error(`${errorMsg} ${response.status}`);
     }
@@ -21,8 +20,6 @@ function getJSON(url, errorMsg = `Something went wrong`) {
 function getCountryData(country) {
   getJSON(`https://restcountries.com/v3.1/name/${country}`, `Country not found`)
     .then(function (data) {
-      // console.log(`cc`);
-      console.log(data[0]);
       renderCountry(data[0]);
       const neighbour = data[0].borders?.[0];
       if (!neighbour) {
@@ -47,12 +44,11 @@ function getCountryData(country) {
       ).textContent = `${err.message}. Try again later`;
       document.querySelector('.errorMsg').style.display = 'inline';
       document.querySelector('.lds-ellipsis').style.display = 'none';
-      console.log(err);
       // renderError(`Something went wrong ${err.message}. Try again! ${err}`);
     })
     .finally(function () {
       // return (countriesContainer.style.opacity = 1);
-      console.log(`we have finished!`);
+      console.log(`operation complete!`);
     });
 }
 function renderCountry(data, className = '') {
